@@ -1,3 +1,15 @@
-<button class="btn btn-success" (click)="onStartGame()" [disabled]="disableStartButton">Start Game</button>
-<button class="btn btn-danger" (click)="onPauseGame()" [disabled]="disablePauseButton">Pause Game</button>
-<button class="btn btn-primary" (click)="onRestartGame()" [disabled]="disableRestartButton">Restart Game</button>
+<button class="btn btn-success" 
+(click)="onStartGame()" 
+[disabled]="disableStartButton" 
+#startButton
+>Start Game</button>
+
+<button class="btn btn-danger" 
+(click)="onPauseGame(startButton)" 
+[disabled]="disablePauseButton"
+>Pause Game</button>
+
+<button class="btn btn-primary" 
+(click)="onRestartGame(startButton)" 
+[disabled]="disableRestartButton"
+>Restart Game</button>

@@ -33,14 +33,17 @@ export class GameControlComponent implements OnInit {
     this.disableRestartButton = false;
   }
 
-  onPauseGame() {
+  onPauseGame(theStartButtonRef: HTMLButtonElement) {
     clearInterval(this.interval);
     this.disablePauseButton = true;
     this.disableStartButton = false;
+    
+    console.log(theStartButtonRef.textContent.includes("Start Game"))
+    theStartButtonRef.textContent = "Continue";
   }
 
-  onRestartGame() {
-    this.onPauseGame();
+  onRestartGame(theStartButtonRef: HTMLButtonElement) {
+    this.onPauseGame(theStartButtonRef);
     this.clearedArrays.emit({oddNumbers: [], evenNumbers: []});
     this.lastNumber = 0;
     this.onStartGame();
