@@ -50,5 +50,8 @@ export class AppComponent {
     }
   }
 
-  onClearArrays(numberArrays: {}) {}
+  onClearArrays(numberArrays: {oddNumbers: number[], evenNumbers: number[]}) {
+    this.emittedOddNumbers = numberArrays.oddNumbers;
+    this.emittedEvenNumbers = numberArrays.evenNumbers;
+  }
 } // End of the class

@@ -22,6 +22,8 @@
     </div>
   </div>
 </div>
+<br>
+<hr>
 
 <div class="container">
   <div class="row">
@@ -40,11 +42,14 @@
       </ol>
     </div>
   </div>
+  <br>
+  <hr>
+
   <div class="row">
     <div class="col-xs-12">
       <app-game-control 
       (intervalFired)="onIntervalFired($event)"
-      (clearArrays)="onClearArrays($event)">
+      (clearedArrays)="onClearArrays($event)">
       </app-game-control>
 
       <div class="row">
