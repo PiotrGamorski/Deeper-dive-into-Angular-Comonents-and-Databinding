@@ -10,6 +10,9 @@ export class AppComponent {
     { type: "server", name: "TestServer", content: "Just a test!" },
   ];
 
+  emittedOddNumbers: number[] = [];
+  emittedEvenNumbers: number[] = [];
+
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
       type: "server",
@@ -36,4 +39,16 @@ export class AppComponent {
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
   }
+
+  // methods for the GameControl exercise
+  onIntervalFired(theEmittedNumber: number) {
+    console.log(theEmittedNumber);
+    if (theEmittedNumber % 2 === 0) {
+      this.emittedEvenNumbers.push(theEmittedNumber);
+    } else {
+      this.emittedOddNumbers.push(theEmittedNumber);
+    }
+  }
+
+  onClearArrays(numberArrays: {}) {}
 } // End of the class

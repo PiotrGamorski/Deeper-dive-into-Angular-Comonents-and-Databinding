@@ -31,6 +31,8 @@ export class ServerElementComponent
     AfterViewChecked,
     OnDestroy
 {
+  // the @Input decorator allows to use the property outside this component
+  // can be seen by the parent component
   @Input("srvElement") element: { type: string; name: string; content: string };
   @Input("name") name: string;
   @ViewChild("heading", { static: true }) header: ElementRef;
