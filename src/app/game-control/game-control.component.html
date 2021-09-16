@@ -1,15 +1,21 @@
-<button class="btn btn-success" 
-(click)="onStartGame()" 
-[disabled]="disableStartButton" 
-#startButton
->Start Game</button>
-
-<button class="btn btn-danger" 
-(click)="onPauseGame(startButton)" 
-[disabled]="disablePauseButton"
->Pause Game</button>
-
-<button class="btn btn-primary" 
-(click)="onRestartGame(startButton)" 
-[disabled]="disableRestartButton"
->Restart Game</button>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="wrapper">
+                <button class="btn btn-success" 
+                (click)="onStartGame()" 
+                [disabled]="disableStartButton" 
+                #startButton
+                >Start Game</button>
+                
+                <button class="btn btn-danger" 
+                (click)="onPauseGame(startButton)" 
+                [disabled]="disablePauseButton"
+                >Pause Game</button>
+                
+                <button class="btn btn-primary" 
+                (click)="onRestartGame(startButton)" 
+                [disabled]="disableRestartButton"
+                >Restart Game</button>
+            </div>
+        </div>
+    </div>

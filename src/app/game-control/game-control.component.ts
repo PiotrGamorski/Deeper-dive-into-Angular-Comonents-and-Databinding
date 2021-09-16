@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-game-control",
@@ -7,14 +7,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 })
 export class GameControlComponent implements OnInit {
   @Output() intervalFired = new EventEmitter<number>();
-  interval;
-  lastNumber = 0;
 
   @Output() clearedArrays = new EventEmitter<{
     oddNumbers: number[];
     evenNumbers: number[];
   }>();
 
+  interval;
+  lastNumber = 0;
   disableStartButton: boolean = false;
   disablePauseButton: boolean = true;
   disableRestartButton: boolean = true;
@@ -37,14 +37,14 @@ export class GameControlComponent implements OnInit {
     clearInterval(this.interval);
     this.disablePauseButton = true;
     this.disableStartButton = false;
-    
-    console.log(theStartButtonRef.textContent.includes("Start Game"))
+
+    console.log(theStartButtonRef.textContent.includes("Start Game"));
     theStartButtonRef.textContent = "Continue";
   }
 
   onRestartGame(theStartButtonRef: HTMLButtonElement) {
     this.onPauseGame(theStartButtonRef);
-    this.clearedArrays.emit({oddNumbers: [], evenNumbers: []});
+    this.clearedArrays.emit({ oddNumbers: [], evenNumbers: [] });
     this.lastNumber = 0;
     this.onStartGame();
   }
